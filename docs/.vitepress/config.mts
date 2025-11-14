@@ -2,14 +2,11 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   base: "/duckovcustommodel-docs/",
-  title: "逃离鸭科夫自定义模型管理器",
+  title: "Duckov Custom Model",
   description: "Duckov Custom Model - 自定义模型管理器使用文档",
   head: [
-    ['link', { rel: 'icon', href: '../public/favicon.ico' }]
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
-  vite: {
-    publicDir: '../public/',
-  },
   lastUpdated: true,
   cleanUrls: true,
   lang: "zh-CN",

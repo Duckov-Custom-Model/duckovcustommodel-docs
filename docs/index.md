@@ -6,7 +6,7 @@ hero:
   text: "自定义模型管理器"
   tagline: Duckov Custom Model - 一个用于逃离鸭科夫的自定义玩家模型模组
   image:
-    src: /public/logo.png
+    src: /logo.png
     alt: logo
   actions:
     - theme: brand

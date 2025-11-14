@@ -5,7 +5,7 @@ export default defineConfig({
   title: "Duckov Custom Model",
   description: "Duckov Custom Model - 自定义模型管理器使用文档",
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }]
+    ['link', { rel: 'icon', href: '/duckovcustommodel-docs/favicon.ico' }]
   ],
   lastUpdated: true,
   cleanUrls: true,

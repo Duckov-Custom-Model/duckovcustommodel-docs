@@ -1,0 +1,91 @@
+# 模型包结构
+
+每个模型包文件夹应包含以下文件：
+
+```
+模型包文件夹/
+├── bundleinfo.json          # 模型包配置文件（必需）
+├── modelbundle.assetbundle  # Unity AssetBundle 文件（必需）
+└── thumbnail.png            # 缩略图文件（可选）
+```
+
+## bundleinfo.json 格式
+
+```json
+{
+  "BundleName": "模型包名称",
+  "BundlePath": "modelbundle.assetbundle",
+  "Models": [
+    {
+      "ModelID": "unique_model_id",
+      "Name": "模型显示名称",
+      "Author": "作者名称",
+      "Description": "模型描述",
+      "Version": "1.0.0",
+      "ThumbnailPath": "thumbnail.png",
+      "PrefabPath": "Assets/Model.prefab",
+      "DeathLootBoxPrefabPath": "Assets/DeathLootBox.prefab",
+      "Target": ["Character", "AICharacter"],
+      "SupportedAICharacters": ["Cname_Wolf", "Cname_Scav", "*"],
+      "CustomSounds": [
+        {
+          "Path": "sounds/normal1.wav",
+          "Tags": ["normal"]
+        },
+        {
+          "Path": "sounds/surprise.wav",
+          "Tags": ["surprise", "normal"]
+        },
+        {
+          "Path": "sounds/death.wav",
+          "Tags": ["death"]
+        },
+        {
+          "Path": "sounds/idle1.wav",
+          "Tags": ["idle"]
+        }
+      ]
+    }
+  ]
+}
+```
+
+## 字段说明
+
+#### **BundleName**（必需）
+
+模型包名称，用于标识和显示
+
+#### **BundlePath**（必需）
+
+AssetBundle 文件路径，相对于模型包文件夹的路径
+
+#### **Models**（必需）
+
+模型信息数组，可包含多个模型
+
+#### **ModelInfo 字段**
+
+- `ModelID`（必需）：模型的唯一标识符，用于在配置文件中引用模型
+- `Name`（可选）：模型在界面中显示的名称
+- `Author`（可选）：模型作者
+- `Description`（可选）：模型描述信息
+- `Version`（可选）：模型版本号
+- `ThumbnailPath`（可选）：缩略图路径，相对于模型包文件夹的外部文件路径（如 `"thumbnail.png"`）
+- `PrefabPath`（必需）：模型 Prefab 在 AssetBundle 内的资源路径（如 `"Assets/Model.prefab"`）
+- `DeathLootBoxPrefabPath`（可选）：死亡战利品箱 Prefab 在 AssetBundle 内的资源路径（如 `"Assets/DeathLootBox.prefab"`）
+  - 当角色使用该模型并死亡时，如果配置了此字段，死亡战利品箱会使用自定义的 Prefab 替换默认模型
+  - 如果未配置此字段，死亡战利品箱将使用默认模型
+- `Target`（可选）：模型适用的目标类型数组（默认：`["Character"]`）
+  - 可选值：`"Character"`（角色）、`"Pet"`（宠物）、`"AICharacter"`（AI 角色）
+  - 可以同时包含多个值，表示该模型同时适用于多个目标类型
+  - 模型选择界面会根据当前选择的目标类型过滤显示兼容的模型
+- `SupportedAICharacters`（可选）：支持的 AI 角色名称键数组（仅在 `Target` 包含 `"AICharacter"` 时有效）
+  - 可以指定该模型适用于哪些 AI 角色
+  - 特殊值 `"*"`：表示该模型适用于所有 AI 角色
+  - 如果为空数组且 `Target` 包含 `"AICharacter"`，则该模型不会应用于任何 AI 角色
+- `CustomSounds`（可选）：自定义音效信息数组，支持为音效配置标签
+  - 每个音效可以配置多个标签（`normal`、`surprise`、`death`）
+  - 未指定标签时，默认为 `["normal"]`
+  - 同一音效文件可以同时用于多个场景
+  - 音效文件路径在 `Path` 中指定，相对于模型包文件夹

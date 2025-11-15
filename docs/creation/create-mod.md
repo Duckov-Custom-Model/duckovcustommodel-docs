@@ -270,8 +270,8 @@ description = A template mod for adding custom models to Duckov Custom Model.
 
 | 字段 | 说明 | 示例 |
 |------|------|------|
-| `Name` | 模组名称，需要和DLL对应 | `jiuhu` |
-| `displayName` | 显示名称 | `酒狐` |
+| `Name` | 模组名称，需要和模组命名空间对应 | `jiuhu` |
+| `displayName` | 模组显示名称 | `酒狐` |
 | `description` | 模组描述 | `把玩家模型替换为酒狐` |
 
 ## 编译模组
@@ -313,14 +313,14 @@ description = A template mod for adding custom models to Duckov Custom Model.
 ### 最终结构
 
 ```
-MyModelMod_v1.0/
-├── MyCharacterPack/
-│   ├── bundleinfo.json
-│   ├── modelbundle.assetbundle
-│   └── thumbnail.png
-├── mod.dll
-├── info.ini
-└── preview.png
+MyModelMod_v1.0/					# Mod文件夹
+├── MyCharacterPack/				# 模型包
+│   ├── bundleinfo.json				# 模型信息
+│   ├── modelbundle.assetbundle		# 模型AB包
+│   └── thumbnail.png				# 模型预览图
+├── mod.dll							# ModDLL
+├── info.ini						# Mod信息
+└── preview.png						# Mod预览图
 ```
 
 ### 发布模组
@@ -337,21 +337,32 @@ MyModelMod_v1.0/
 
 **解决方法**：
 
+- 检查`csproj`内的`DuckovPath`路径是否正确
+
 ### 模组加载但模型未复制
 
 **解决方法**：
 
-- 检查 控制台中的错误信息
+- 检查 控制台中的错误信息，路径为`%userprofile%\AppData\LocalLow\TeamSoda\Duckov\Player.log`
 - 确认模型包文件夹结构正确
 - 验证目标目录的写入权限
 
 ### 模组不显示在模组管理器中
 
 **解决方法**：
+
 - 确认 `info.ini` 文件存在且格式正确
 - 检查 `preview.png` 是否存在
 - 确认模组文件夹放置在正确的位置
 - 确认`info.ini`是否与模组的命名空间对应
+
+### 模组上传失败
+
+**解决方法**：
+
+- 使用加速器或魔法来上传模组
+- 检查模组`info.ini`信息是否正确
+- 检查创意工坊物品是否在审核中
 
 ## 下一步
 

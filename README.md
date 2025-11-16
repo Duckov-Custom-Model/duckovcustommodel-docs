@@ -125,19 +125,19 @@ duckovcustommodel-docs/
 
 ## 模型数据格式
 
-模型数据存储在 [models.json](vscode-file://vscode-app/e:/Program Files/Microsoft VS Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)：
+模型数据存储在 models.json：
 
 ```json
 {
   "ysm": [
-    {
-      "id": "3601557685",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3601557685",
-      "image": "https://example.com/image.jpg",
-      "name": "模型名称",
-      "tag": ["YSM", "原神"],
-      "modelID": ["10004", "10005"]
-    }
+      {
+        "id": "3601557685",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3601557685",
+        "image": "https://images.steamusercontent.com/ugc/18248700973573040659/870EF36D528E90F821DFC515B5960FDC6C2553E6/?imw=268&imh=268&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+        "name": "酒狐",
+        "tag": ["YSM"],
+        "modelID": ["10004","10005"]
+      }
   ]
 }
 ```

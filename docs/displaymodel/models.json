@@ -9,6 +9,14 @@
         "modelID": ["10004","10005"]
       },
       {
+        "id": "3607070338",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3607070338",
+        "image": "https://images.steamusercontent.com/ugc/10280101574558897071/66A960EABE77794E0630608A4D6AE5BF72700E0D/?imw=200&imh=200&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+        "name": "绝地潜兵",
+        "tag": ["YSM","绝地潜兵"],
+        "modelID": ["hd10001"]
+      },
+      {
         "id": "3603002030",
         "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3603002030",
         "image": "https://images.steamusercontent.com/ugc/17625051038847281653/1E9F9C59C98C31226062859B8A61C082535EE3E3/?imw=200&imh=200&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
@@ -80,8 +88,15 @@
       {
         "id": "3606250785",
         "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3606250785",
-        "image": "https://images.steamusercontent.com/ugc/11664726642742285076/4564E5FBB6F0390481B376895A138C9300C0E795/?imw=200&imh=200&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
-        "name": "反汉克",
+        "image": "https://images.steamusercontent.com/ugc/12337500955064503475/FE5298E8C55D0BB193F7D19213CBDB45DA8DCDF4/?imw=200&imh=200&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+        "name": "A.A.H.W",
+        "tag": ["YSM"]
+      },
+      {
+        "id": "3606951859",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3606951859",
+        "image": "https://images.steamusercontent.com/ugc/12616790535324407170/E6F23F7F985DAE698C62A70BE996B30FD6C56D3B/?imw=200&imh=200&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+        "name": "Nexus Core",
         "tag": ["YSM"]
       }
     ],
@@ -91,7 +106,8 @@
         "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3600787385",
         "image": "https://images.steamusercontent.com/ugc/11964511981819239684/627E7862CBDCC7790CD7BB2E1A0D40716041D9EF/?imw=200&imh=200&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
         "name": "日富美",
-        "tag": ["碧蓝档案"]
+        "tag": ["碧蓝档案"],
+        "modelID": ["BA_1127"]
       },
       {
         "id": "3603175815",

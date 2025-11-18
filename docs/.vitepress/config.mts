@@ -101,6 +101,9 @@ export default withPwa(
             {
               text: '创建模组', link: '/creation/create-mod'
             },
+            {
+              text: '疑难解答', link: '/creation/FAQ'
+            }
           ]
         },
         {

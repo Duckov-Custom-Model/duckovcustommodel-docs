@@ -29,7 +29,7 @@ onBeforeMount(async () => {
     <div class="pwa-toast" role="alertdialog" aria-labelledby="pwa-message">
     <div class="pwa-title">DuckovCustomModel 模组文档</div>
       <div id="pwa-message" class="mb-3">
-        网页应用已缓存，可以离线使用
+        文档已缓存，可以离线使用
       </div>
       <button type="button" class="pwa-cancel" @click="close">
         关闭
@@ -51,9 +51,9 @@ onBeforeMount(async () => {
   right: 0;
   bottom: 0;
   margin: 16px;
-  padding: 12px;
+  padding: 18px;
   border: 1px solid var(--vp-c-divider);
-  border-radius: 4px;
+  border-radius: 8px;
   z-index: 100;
   text-align: left;
   box-shadow: var(--vp-shadow-3);
@@ -67,10 +67,11 @@ onBeforeMount(async () => {
 }
 
 .pwa-toast button {
+  width: 100%;
   border: 1px solid var(--vp-c-divider);
   outline: none;
   margin-right: 5px;
-  border-radius: 2px;
+  border-radius: 8px;
   padding: 3px 10px;
   background-color: var(--vp-c-bg-soft);
   color: var(--vp-c-text-1);

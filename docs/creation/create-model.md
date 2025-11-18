@@ -169,7 +169,7 @@ Rig 类型的选择会影响动画系统的工作方式。
 
 #### 5.2URP设置
 
-1. 创建URP配置文件，依次点击**Create（创建）** -> Rendering（渲染） -> **URP Assets(with Universal Render)**
+1. 创建URP配置文件，依次点击**Create（创建）** -> **Rendering（渲染）** -> **URP Assets(with Universal Render)**
 
    ![image-20251118043959499](/images/image-20251118043959499.png)
 
@@ -177,7 +177,7 @@ Rig 类型的选择会影响动画系统的工作方式。
 
    ![image-20251118044820438](/images/image-20251118044820438.png)
 
-2. 设置 URP 为默认渲染管线，设置好后，新添加的模型默认会使用**Universal Render Pipeline/Lit**着色器
+2. 设置 URP 为默认渲染管线，依次点击**编辑** -> **项目设置** -> **图像** -> **可编写脚本的渲染管道设置** -> **刚刚创建的UPR配置文件**。设置好后，新添加的模型默认会使用**Universal Render Pipeline/Lit**着色器
 
    ![image-20251118044610289](/images/image-20251118044610289.png)
 

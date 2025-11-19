@@ -66,7 +66,7 @@
       {
         "id": "3606660126",
         "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3606660126",
-        "image": "https://images.steamusercontent.com/ugc/15340046880634975624/7D23B0BF4FB8E1B157F8AB5448402029A07714A2/?imw=200&imh=200&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+        "image": "https://images.steamusercontent.com/ugc/12936675919151335563/0F6FEC34CCBFC06D75F17E4DFA9B6AE43C555067/?imw=200&imh=200&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
         "name": "雪鸮",
         "tag": ["YSM","星之翼"],
         "modelID": ["189534"]
@@ -74,7 +74,7 @@
       {
         "id": "3606710881",
         "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3606710881",
-        "image": "https://images.steamusercontent.com/ugc/11134209050881955162/F8BE08393E2CC4E7AB28E1D50EB8120E41FAF111/?imw=200&imh=200&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+        "image": "https://images.steamusercontent.com/ugc/17618111660348498196/AE812D32D7A170129589569E451C95D2E2FD37BA/?imw=200&imh=200&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
         "name": "Fufu",
         "tag": ["YSM","VOCALOID"]
       },
@@ -172,6 +172,34 @@
         "image": "https://images.steamusercontent.com/ugc/9604685233069751349/B90293A66B55EA5634E890E94056DE0BE733E50D/?imw=200&imh=200&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
         "name": "MaidMilltina",
         "tag": ["VRCHAT"]
+      },
+      {
+        "id": "3607421469",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3607421469",
+        "image": "https://images.steamusercontent.com/ugc/9478291704657137414/C1E43C13DC8285DE0D6F6562A8ED244FD0ACC61A/?imw=200&imh=200&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+        "name": "Davali",
+        "tag": ["其他"]
+      },
+      {
+        "id": "3608213851",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3608213851",
+        "image": "https://images.steamusercontent.com/ugc/10866849859551606679/D4D3F216E4120C30D94AED71B2D5359795A846E2/?imw=200&imh=200&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+        "name": "五河琴里",
+        "tag": ["约会大作战"]
+      },
+      {
+        "id": "3607387263",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3607387263",
+        "image": "https://images.steamusercontent.com/ugc/15124039743583374460/F898C0E6115D8835211CD41703B5644AE1CBACC9/?imw=200&imh=200&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+        "name": "剪纸仙灵小小佐伊",
+        "tag": ["英雄联盟"]
+      },
+      {
+        "id": "3608431493",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3608431493",
+        "image": "https://images.steamusercontent.com/ugc/16474976845175590273/0D8F08A9AFBE29A1EB29A0DE2DB3B6EE305DEFCA/?imw=200&imh=200&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+        "name": "星之守护者小小卡莎",
+        "tag": ["英雄联盟"]
       }
     ]
   }

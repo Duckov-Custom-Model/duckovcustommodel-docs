@@ -1,6 +1,6 @@
 # 打包模型包
 
-制作好模型后，需要打包成模型包方便我们的mod使用。
+制作好模型后，需要打包成模型包方便我们的Mod使用。
 
 ## 模型包结构
 
@@ -37,13 +37,17 @@
           "Tags": ["normal"]
         },
         {
+          "Path": "sounds/normal2.wav",
+          "Tags": ["normal"]
+        },
+        {
           "Path": "sounds/surprise.wav",
           "Tags": ["surprise", "normal"]
         },
         {
-          "Path": "sounds/death.wav",
-          "Tags": ["death"]
-        },
+          "Path": "sounds/得吃的小曲.ogg",
+          "Tags": ["search_found_item_quality_red"]
+        }，
         {
           "Path": "sounds/idle1.wav",
           "Tags": ["idle"]
@@ -88,8 +92,8 @@ AssetBundle 文件路径，相对于模型包文件夹的路径
   - 可以指定该模型适用于哪些 AI 角色
   - 特殊值 `"*"`：表示该模型适用于所有 AI 角色
   - 如果为空数组且 `Target` 包含 `"AICharacter"`，则该模型不会应用于任何 AI 角色
-- `CustomSounds`（可选）：自定义音效信息数组，支持为音效配置标签
-  - 每个音效可以配置多个标签（`normal`、`surprise`、`death`）
+- `CustomSounds`（可选）：自定义音效信息数组，支持为音效配置标签，具体标签信息请查看[添加自定义音效](./sounds.md#SoundInfo-字段说明)
+  - 每个音效可以配置多个标签（`normal`、`surprise`）
   - 未指定标签时，默认为 `["normal"]`
   - 同一音效文件可以同时用于多个场景
   - 音效文件路径在 `Path` 中指定，相对于模型包文件夹

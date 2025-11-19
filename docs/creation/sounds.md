@@ -24,8 +24,8 @@
       "Tags": ["surprise", "normal"]
     },
     {
-      "Path": "sounds/death.wav",
-      "Tags": ["death"]
+      "Path": "sounds/得吃的小曲.ogg",
+      "Tags": ["search_found_item_quality_red"]
     }
   ]
 }
@@ -34,10 +34,11 @@
 ### SoundInfo 字段说明
 
 - `Path`（必需）：音效文件路径，相对于模型包文件夹
+
 - `Tags`（可选）：音效标签数组，用于指定音效的使用场景
   - `"normal"`：普通音效，用于玩家按键触发和 AI 普通状态
-  - `"surprise"`：警戒音效，用于 AI 警戒状态
-  - `"death"`：死亡音效，用于 AI 死亡状态
+  - `"surprise"`：警戒音效，用于 AI 警戒状态（发现玩家）
+  - `"death"`：死亡音效，用于 AI 死亡状态 <Badge type="danger" text="v1.8.5 已删除" />
   - `"idle"`：待机音效，用于角色自动播放（可通过配置控制哪些角色类型允许自动播放）
   - `"trigger_on_death"`： 死亡音效，用于角色死亡时自动播放音效
   - `"trigger_on_hurt"`： 受伤音效，用于角色受伤时自动播放音效
@@ -50,12 +51,18 @@
   - `"search_found_item_quality_red"`： 搜索到品质为red的物品时自动播放音效
   - `"search_found_item_quality_q7"`： 搜索到品质为q7的物品时自动播放音效
   - `"search_found_item_quality_q8"`： 搜索到品质为q8的物品时自动播放音效
-  - `"footstep_organic_walk_light"`、`"footstep_organic_walk_heavy"`、`"footstep_organic_run_light"`、`"footstep_organic_run_heavy"`：有机材质脚步声（轻/重步行、轻/重跑步）
-  - `"footstep_mech_walk_light"`、`"footstep_mech_walk_heavy"`、`"footstep_mech_run_light"`、`"footstep_mech_run_heavy"`：机械材质脚步声（轻/重步行、轻/重跑步）
-  - `"footstep_danger_walk_light"`、`"footstep_danger_walk_heavy"`、`"footstep_danger_run_light"`、`"footstep_danger_run_heavy"`：危险材质脚步声（轻/重步行、轻/重跑步）
-  - `"footstep_nosound_walk_light"`、`"footstep_nosound_walk_heavy"`、`"footstep_nosound_run_light"`、`"footstep_nosound_run_heavy"`：无声材质脚步声（轻/重步行、轻/重跑步）
+  - `"footstep_organic_walk_light"`、`"footstep_organic_walk_heavy"`、`"footstep_organic_run_light"`、`"footstep_organic_run_heavy"`：有机材质脚步声（轻/重步行、轻/重跑步）<Badge type="success" text="new" />
+  - `"footstep_mech_walk_light"`、`"footstep_mech_walk_heavy"`、`"footstep_mech_run_light"`、`"footstep_mech_run_heavy"`：机械材质脚步声（轻/重步行、轻/重跑步）<Badge type="success" text="new" />
+  - `"footstep_danger_walk_light"`、`"footstep_danger_walk_heavy"`、`"footstep_danger_run_light"`、`"footstep_danger_run_heavy"`：危险材质脚步声（轻/重步行、轻/重跑步）<Badge type="success" text="new" />
+  - `"footstep_nosound_walk_light"`、`"footstep_nosound_walk_heavy"`、`"footstep_nosound_run_light"`、`"footstep_nosound_run_heavy"`：无声材质脚步声（轻/重步行、轻/重跑步）<Badge type="success" text="new" />
   - 可以同时包含多个标签，表示该音效可用于多个场景
   - 未指定标签时，默认为 `["normal"]`
+  
+  ::: warning 版本变更
+  
+  `death` 参数已在 `v1.8.5` 版本中移除，现在统一使用`trigger_on_death`参数来播放角色死亡音效。如需了解更多变更信息，请查看[更新日志](https://github.com/BAKAOLC/DuckovCustomModel/blob/master/CHANGELOG.md)。
+  
+  :::
 
 ## 音效触发方式
 
@@ -85,7 +92,7 @@
 
 ## 音效文件要求
 
-- 音效文件应放置在模型包文件夹内
+- 音效文件应放置在[模型包文件夹](./create-mod.md#模组包结构)内
 - 支持游戏使用的音频格式（通常为 WAV、OGG 等）
 - 音效文件路径在 `Path` 中指定，相对于模型包文件夹
 - 例如：如果模型包文件夹为 `MyModel/`，音效文件为 `MyModel/sounds/voice.wav`，则 `Path` 应设置为 `"sounds/voice.wav"`

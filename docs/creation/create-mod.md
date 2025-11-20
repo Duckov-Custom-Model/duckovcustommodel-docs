@@ -1,6 +1,6 @@
 # 创建模组
 
-本文档介绍如何将自定义模型打包成游戏模组，使其能够通过游戏的模组管理器自动加载。
+本文档介绍如何编译模组dll，使其能够实现把模型复制到指定目录的功能。
 
 ## 模组工作原理
 
@@ -257,24 +257,6 @@ namespace DuckovCustomModelRegister
 
 
 
-## 配置 info.ini
-
-在模组根目录创建 `info.ini` 文件，配置模组的元数据：
-
-```ini
-name = DuckovCustomModelRegister
-displayName = Duckov Custom Model Template Model
-description = A template mod for adding custom models to Duckov Custom Model.
-```
-
-### 字段说明
-
-| 字段 | 说明 | 示例 |
-|------|------|------|
-| `Name` | 模组名称，需要和模组命名空间对应 | `jiuhu` |
-| `displayName` | 模组显示名称 | `酒狐` |
-| `description` | 模组描述 | `把玩家模型替换为酒狐` |
-
 ## 编译模组
 
 ### 构建项目
@@ -299,86 +281,3 @@ description = A template mod for adding custom models to Duckov Custom Model.
 ::: tip
 建议使用 Release 配置进行最终构建，以获得更好的性能。
 :::
-
-## 打包模组
-
-### 准备文件
-
-1. 创建模组包文件夹（如 `MyModelMod_v1.0`）
-2. 将以下文件复制到该文件夹：
-   - 编译好的 `mod.dll`
-   - `info.ini`
-   - `preview.png`（模组预览图）
-   - 所有模型包文件夹
-
-### 最终结构
-
-```
-MyModelMod/                      	 # 模组包根目录
-└── Models/                 		 # 模型包文件夹
-│	└── CharacterPack/				 # 模型包（可以随意取名）
-│   │	├── bundleinfo.json          # 模型包配置文件（必需）
-│   │	├── modelbundle.assetbundle  # Unity AssetBundle 文件（必需）
-│   │	├── thumbnail.png            # 模型缩略图（建议）
-│   │	└── sounds/                  # 音频文件夹（可选）
-│   │    	└── voice.ogg
-├── mod.dll                      	 # 模组 DLL（必需）
-├── info.ini                     	 # 模组信息配置（必需）
-└── preview.png                  	 # 模组预览图（必需）
-```
-
-### 发布模组
-
-在游戏进入主界面后，在Mods列表可以上传自己的Mod
-
-![image-20251115044711551](/images/image-20251115044711551.png)
-
-![image-20251115044729813](/images/image-20251115044729813.png)
-
-## 常见问题
-
-### 编译错误：找不到引用
-
-**解决方法**：
-
-- 检查`csproj`内的`DuckovPath`路径是否正确
-
-### 模组加载但模型未复制
-
-**解决方法**：
-
-- 检查 控制台中的错误信息，路径为`%userprofile%\AppData\LocalLow\TeamSoda\Duckov\Player.log`
-- 确认模型包文件夹结构正确
-- 验证目标目录的写入权限
-
-### 模组不显示在模组管理器中
-
-**解决方法**：
-
-- 确认 `info.ini` 文件存在且格式正确
-- 检查 `preview.png` 是否存在
-- 确认模组文件夹放置在正确的位置
-- 确认`info.ini`是否与模组的[命名空间](./create-mod#基础模组代码)对应
-
-### 模组上传失败
-
-**解决方法**：
-
-- 使用加速器或魔法来上传模组
-- 检查模组`info.ini`信息是否正确
-- 检查创意工坊物品是否在审核中
-- 检查账户是否有上传权限
-- 检查模组预览图是否过大，推荐尺寸`256x256`
-
-## 下一步
-
-完成模组创建后，你可以：
-
-1. 在游戏论坛或社区分享你的模组
-2. 创建使用说明和预览图
-3. 收集用户反馈并持续改进
-
-## 相关资源
-
-- [模型包结构](./bundle-structure.md)
-- [bundleinfo.json 配置](./bundle-structure.md#bundleinfo-json-格式)

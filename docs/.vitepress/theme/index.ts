@@ -5,6 +5,7 @@ import imageViewer from 'vitepress-plugin-image-viewer';
 import vImageViewer from 'vitepress-plugin-image-viewer/lib/vImageViewer.vue';
 import { useRoute } from 'vitepress';
 import './custom.css'
+import 'virtual:group-icons.css'
 
 export default {
   ...Theme,

@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { withPwa } from '@vite-pwa/vitepress'
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 
 export default withPwa(
   defineConfig({
@@ -12,6 +13,18 @@ export default withPwa(
     lastUpdated: true,
     cleanUrls: true,
     lang: "zh-CN",
+
+    markdown: {
+      config(md) {
+        md.use(groupIconMdPlugin)
+      },
+    },
+
+    vite: {
+      plugins: [
+        groupIconVitePlugin()
+      ]
+    },
 
     themeConfig: {
       logo: {
@@ -76,34 +89,30 @@ export default withPwa(
           text: '使用指南',
           items: [
             { text: '模型选择界面', link: '/guide/ui' },
-            { text: '模型安装', link: '/guide/install-model' }
+            { text: '模型安装', link: '/guide/install-model' },
+            { text: '疑难解答', link: '/creation/FAQ' }
+          ]
+        },
+        {
+          text: '模型包制作',
+          collapsed: false,
+          items: [
+            { text: '准备工作', link: '/creation/prerequisites' },
+            { text: '创建模型', link: '/creation/create-model', },
+            { text: '定位锚点', link: '/creation/locators' },
+            { text: '添加动画器', link: '/creation/add-animator' },
+            { text: '打包模型', link: '/creation/create-bundle' },
+            { text: '添加自定义音效', link: '/creation/sounds' },
+            { text: 'AI 角色适配', link: '/creation/ai-characters' },
+            { text: '打包模型包', link: '/creation/bundle-structure' },
           ]
         },
         {
           text: '模组制作',
           collapsed: false,
           items: [
-            {
-              text: '准备工作', link: '/creation/prerequisites'
-            },
-            {
-              text: '创建模型', link: '/creation/create-model',
-              collapsed: false,
-              items: [
-                { text: '第一步 定位锚点', link: '/creation/locators' },
-                { text: '第二步 添加动画器', link: '/creation/add-animator' },
-                { text: '第三步 打包模型', link: '/creation/create-bundle' },
-                { text: '第四步 添加自定义音效', link: '/creation/sounds' },
-                { text: '第五步 AI 角色适配', link: '/creation/ai-characters' },
-                { text: '第六步 打包模型包', link: '/creation/bundle-structure' }
-              ]
-            },
-            {
-              text: '创建模组', link: '/creation/create-mod'
-            },
-            {
-              text: '疑难解答', link: '/creation/FAQ'
-            }
+            { text: '创建模组', link: '/creation/create-mod' },
+            {text:'打包模组',link:'/creation/package-mod'}
           ]
         },
         {

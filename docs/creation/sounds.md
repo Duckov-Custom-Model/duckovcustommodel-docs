@@ -6,7 +6,7 @@
 
 在 `bundleinfo.json` 的 `ModelInfo` 中可以配置音效：
 
-```json
+```json [json]
 {
   "ModelID": "unique_model_id",
   "Name": "模型显示名称",

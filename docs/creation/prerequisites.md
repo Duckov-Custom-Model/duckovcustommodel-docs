@@ -129,7 +129,7 @@ Unity 和相关工具需要 .NET 运行环境支持。
 
 在开始之前，建议规划好你的模型包目录结构：
 
-```
+``` bash [文件夹]
 ModelPack/ 
 ├── bundleinfo.json # 模型包配置文件 
 ├── modelbundle # Unity AssetBundle 文件 

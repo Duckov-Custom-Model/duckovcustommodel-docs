@@ -16,7 +16,7 @@
 
 一个完整的模组包应包含以下文件：
 
-```
+``` bash [文件夹]
 MyModelMod/                      	 # 模组包根目录
 └── Models/                 		 # 模型包文件夹
 │	└── CharacterPack/				 # 模型包（可以随意取名）
@@ -43,9 +43,43 @@ MyModelMod/                      	 # 模组包根目录
 | `info.ini` | 是 | 模组的信息 |
 | `preview.png` | 是 | 模组预览图，显示在游戏的模组管理器中 |
 
-## 开发环境设置
+## 使用SDK编译(推荐)
 
-### 必需工具
+如果安装了**DCM SDK**，可以使用SDK来编译模组DLL。
+
+### 设置游戏路径
+
+如果之前已经设置过游戏路径，可以跳过这一步。如果没有设置，可以查看[设置游戏路径](./create-bundle.md#设置游戏路径)。
+
+
+
+### 生成 Mod DLL
+
+点击导航栏内的**Duckov Custom Model**菜单，并点击**生成 Mod DLL**按钮，会打开**Mod DLL 生成工具**
+
+![image-20251122024804347](/images/image-20251122024804347.png)
+
+| 名称                 | 作用                                                         | 例子                     |
+| -------------------- | ------------------------------------------------------------ | ------------------------ |
+| DLL名称(Namespace)   | DLL命名空间和模组名称                                        | jiuhu                    |
+| Mod显示名称          | 模组在游戏显示的名称                                         | 酒狐                     |
+| Mod描述              | 模组在游戏显示的描述                                         | 把玩家模型替换为酒狐模型 |
+| 预览图(可选)         | 模组在游戏显示的预览图片                                     | preview.png              |
+| 自动复制到游戏文件夹 | 除了手动选择的生成ModDLL的位置，还会自动复制一份到游戏的Mods文件夹 | √                        |
+
+填好Mod信息后，点击**生成Mod DLL**按钮，会打开一个选择输出目录的窗口，点击**选择文件夹**
+
+![image-20251122030725840](/images/image-20251122030725840.png)
+
+会打开一个成功生成DLL的窗口，包含DLL和`info.ini`的模组包会生成在指定的文件夹。如果勾选了**自动复制到游戏文件夹**，还会复制一份到游戏的**Mods**文件夹
+
+![image-20251122030806763](/images/image-20251122030806763.png)
+
+## 手动编译
+
+### 开发环境设置
+
+#### 必需工具
 
 1. **Rider** 或 **Visual Studio**
    - 用于编写和编译 C# 代码
@@ -54,7 +88,7 @@ MyModelMod/                      	 # 模组包根目录
 2. **.NET Framework 2.1**
    - 模组建议使用 .NET Framework 2.1 标准
 
-### 创建项目
+#### 创建项目
 
 1. 打开 Rider 或 Visual Studio
 2. 创建新项目：
@@ -67,9 +101,9 @@ MyModelMod/                      	 # 模组包根目录
 如果 .NET Framework 2.1 不可用，可以尝试 .NET Standard 2.1 或 .NET Framework 4.x。
 :::
 
-## 编写模组代码
+### 编写模组代码
 
-### 添加引用
+#### 添加引用
 
 首先需要添加必要的 DLL 引用，通过编辑项目的csproj来引入游戏的DLL。
 
@@ -81,7 +115,7 @@ MyModelMod/                      	 # 模组包根目录
 
 其中`DuckovPath`需要修改为你的鸭科夫的游戏路径
 
-```xml
+```xml [csproj]
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
@@ -117,13 +151,13 @@ MyModelMod/                      	 # 模组包根目录
 
 
 
-### 基础模组代码
+#### 基础模组代码
 
 创建一个新的 C# 类文件（`ModBehaviour.cs`），添加以下代码：
 
 其中命名空间`DuckovCustomModelRegister`需要改成你的项目的命名空间。
 
-```csharp
+```csharp [csharp]
 using System;
 using System.IO;
 using UnityEngine;
@@ -257,14 +291,14 @@ namespace DuckovCustomModelRegister
 
 
 
-## 编译模组
+### 编译模组
 
-### 构建项目
+#### 构建项目
 
 1. 在 Rider/Visual Studio 中，选择 **生成（Build）** > **生成解决方案（Build Solution）**
 2. 或使用快捷键：`Ctrl + Shift + B`
 
-### 查找输出文件
+#### 查找输出文件
 
 编译完成后，DLL 文件通常位于：
 
@@ -281,3 +315,23 @@ namespace DuckovCustomModelRegister
 ::: tip
 建议使用 Release 配置进行最终构建，以获得更好的性能。
 :::
+
+
+
+## 配置 info.ini
+
+在模组根目录创建 `info.ini` 文件，配置模组的信息：
+
+```ini
+name = DuckovCustomModelRegister
+displayName = Duckov Custom Model Template Model
+description = A template mod for adding custom models to Duckov Custom Model.
+```
+
+字段说明
+
+| 字段          | 说明                             | 示例                   |
+| ------------- | -------------------------------- | ---------------------- |
+| `Name`        | 模组名称，需要和模组命名空间对应 | `jiuhu`                |
+| `displayName` | 模组显示名称                     | `酒狐`                 |
+| `description` | 模组描述                         | `把玩家模型替换为酒狐` |

@@ -2,23 +2,7 @@
 
 本文档介绍如何将自定义模型和模组dll打包成游戏模组，使其能够通过游戏的模组管理器加载。
 
-## 配置 info.ini
 
-在模组根目录创建 `info.ini` 文件，配置模组的信息：
-
-```ini
-name = DuckovCustomModelRegister
-displayName = Duckov Custom Model Template Model
-description = A template mod for adding custom models to Duckov Custom Model.
-```
-
-### 字段说明
-
-| 字段          | 说明                             | 示例                   |
-| ------------- | -------------------------------- | ---------------------- |
-| `Name`        | 模组名称，需要和模组命名空间对应 | `jiuhu`                |
-| `displayName` | 模组显示名称                     | `酒狐`                 |
-| `description` | 模组描述                         | `把玩家模型替换为酒狐` |
 
 ## 准备文件
 
@@ -27,11 +11,11 @@ description = A template mod for adding custom models to Duckov Custom Model.
    - 编译好的 `mod.dll`
    - `info.ini`
    - `preview.png`（模组预览图）
-   - 所有模型包文件夹
+   - 所有模型包文件夹，注意。模型包
 
 ## 最终结构
 
-```
+``` bash [文件夹]
 MyModelMod/                      	 # 模组包根目录
 └── Models/                 		 # 模型包文件夹
 │	└── CharacterPack/				 # 模型包（可以随意取名）

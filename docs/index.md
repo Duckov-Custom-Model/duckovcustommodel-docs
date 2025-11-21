@@ -15,6 +15,9 @@ hero:
     - theme: alt
       text: 在 GitHub 查看
       link: https://github.com/Duckov-Custom-Model/DuckovCustomModel
+    - theme: alt
+      text: 下载DCM SDK
+      link: https://github.com/Duckov-Custom-Model/DuckovCustomModel-SDK
 
 features:
   - title: 自定义模型替换

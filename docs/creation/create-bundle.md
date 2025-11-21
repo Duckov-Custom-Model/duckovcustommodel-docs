@@ -11,15 +11,71 @@
 - 定位锚点设置
 - 创建模型预制件（Prefab）
 
-## 设置 AssetBundle 名称
 
-### 1. 选择预制件
+
+## 使用SDK打包(推荐)
+
+如果安装了**DCM SDK**，可以使用SDK来打包模型。
+
+
+
+### 设置游戏路径
+
+如果之前已经设置过游戏路径，可以跳过这一步。点击导航栏内的**Duckov Custom Model**，并点击**游戏路径设置**，会打开一个设置游戏路径的窗口
+
+![image-20251122023607270](/images/image-20251122023607270.png)
+
+#### 自动查找游戏路径(适用于Windows用户)
+
+1. 点击**自动查找**按钮
+
+2. 会打开一个成功找到游戏路径的窗口，完成游戏路径的设置
+
+   ![image-20251122023921455](/images/image-20251122023921455.png)
+
+#### 手动查找游戏路径
+
+1. 点击**浏览**按钮
+
+2. 会打开一个选择游戏安装目录的窗口，跳转到游戏所在的文件夹根目录后，点击**选择文件夹**
+
+   ![image-20251122024359862](/images/image-20251122024359862.png)
+
+3. 完成游戏路径的设置
+
+### 导出模型Bundle
+
+点击导航栏内的**Duckov Custom Model**菜单，并点击**AssetBundle 打包工具**按钮，会打开**AssetBundle 打包工具**
+
+![image-20251122032356015](/images/image-20251122032356015.png)
+
+修改Bundle名称，选择对应的构建目标平台，并将准备好的模型预制件（Prefab）拖动到AssetBundle 打包工具的**无(游戏对象)**上。
+
+![Unity_RXUNEBZl42](/images/Unity_RXUNEBZl42.gif)
+
+点击**导出模型Bundle**，会打开一个**保存模型Bundle**的窗口，选择你的模型包，点击保存。
+
+![image-20251122034733946](/images/image-20251122034733946.png)
+
+模型打包成功后，会打开一个成功的窗口，打开我们的模组包，可以看到保存好的AssetBundle。
+
+![image-20251122035058816](/images/image-20251122035058816.png)
+
+::: warning 重要
+**DCM SDK**打包的AssetBundle是带有`.unity3d`后缀的，在编写`bundleinfo.json`的时候，`BundlePath`也要使用xxx.unity3d
+:::
+
+## 手动打包
+
+### 设置 AssetBundle 名称
+
+#### 1. 选择预制件
 
 在 Project 窗口中找到并选中你的模型预制件（Prefab）。
 
 ![image-20251116155828569](/images/image-20251116155828569.png)
 
-### 2. 分配 AssetBundle 名称
+#### 2. 分配 AssetBundle 名称
 
 在 Inspector 窗口的右下角：
 
@@ -44,7 +100,7 @@
 - 例如：`character_model`、`pet_bundle`、`ai_pack`
 :::
 
-### 3. 确认分配
+#### 3. 确认分配
 
 分配后，Inspector 右下角应该显示你设置的 AssetBundle 名称。
 
@@ -62,15 +118,15 @@ Variant: [None]
 
 :::
 
-## 创建打包脚本
+### 创建打包脚本
 
-### 1. 创建编辑器脚本文件夹
+#### 1. 创建编辑器脚本文件夹
 
 如果还没有 `Editor` 文件夹，在 `Assets` 目录下创建：
 
 ![image-20251116160758560](/images/image-20251116160758560.png)
 
-```
+```bash [文件夹]
 Assets/
 └── Editor/
     └── BuildAssetBundle.cs
@@ -80,11 +136,11 @@ Assets/
 `BuildAssetBundle.cs`必须放在 `Editor` 文件夹中，否则脚本无法正常工作。
 :::
 
-### 2. 创建打包脚本
+#### 2. 创建打包脚本
 
 创建 `BuildAssetBundle.cs` 文件，添加以下代码：
 
-```csharp
+```csharp [csharp]
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -120,13 +176,13 @@ public class BuildAssetBundle
 }
 ```
 
-### 3. 保存脚本
+#### 3. 保存脚本
 
 保存文件后，Unity 会自动编译脚本。
 
-## 执行打包
+### 执行打包
 
-### 1. 打开打包菜单
+#### 1. 打开打包菜单
 
 在 Unity 编辑器顶部菜单栏，找到并点击：
 
@@ -136,17 +192,17 @@ public class BuildAssetBundle
 AssetBundleTools > BuildAllAssetBundles
 ```
 
-### 2. 等待打包完成
+#### 2. 等待打包完成
 
 打包过程可能需要几秒到几分钟，取决于模型的复杂度。
 
 
 
-### 3. 检查输出文件
+#### 3. 检查输出文件
 
 打包完成后，在 `Assets/StreamingAssets` 文件夹中会生成以下文件：
 
-```
+```bash [文件夹]
 Assets/StreamingAssets/
 ├── AssetBundles              # 主清单文件
 ├── AssetBundles.manifest     # 主清单配置
@@ -154,8 +210,8 @@ Assets/StreamingAssets/
 └── mymodel.manifest          # AssetBundle 配置文件
 ```
 
-::: tip
-你需要的是 **不带后缀名** 的 AssetBundle 文件（如 `mymodel`），`.manifest` 文件只是配置信息。
+::: warning
+使用这个脚本打包的是 **不带后缀名** 的 AssetBundle 文件（如 `mymodel`），如果使用**DCM SDK**打包会带`.unity3d`的后缀名。
 :::
 
 ## 常见问题

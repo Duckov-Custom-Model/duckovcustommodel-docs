@@ -6,7 +6,7 @@
 
 每个模型包文件夹应包含以下文件：
 
-```
+```bash [文件夹]
 模型包文件夹/
 ├── bundleinfo.json          # 模型包配置文件（必需）
 ├── modelbundle.assetbundle  # Unity AssetBundle 文件（必需）
@@ -15,7 +15,7 @@
 
 ## bundleinfo.json 格式
 
-```json
+```json [json]
 {
   "BundleName": "模型包名称",
   "BundlePath": "modelbundle.assetbundle",
@@ -74,7 +74,7 @@ AssetBundle 文件路径，相对于模型包文件夹的路径
 
 #### **ModelInfo 字段**
 
-- `ModelID`（必需）：模型的唯一标识符，用于在配置文件中引用模型
+- `ModelID`（必需）：模型的唯一标识符，用于在配置文件中引用模型，可以是数字，中文或英文
 - `Name`（可选）：模型在界面中显示的名称
 - `Author`（可选）：模型作者
 - `Description`（可选）：模型描述信息
@@ -106,9 +106,9 @@ AssetBundle 文件路径，相对于模型包文件夹的路径
 
 ## 添加多个模型
 
-可以在`Models`内添加多个模型，以下是酒狐的示例`bundleinfo.json`文件。文件内添加了酒狐的`Character`模型和狐狸的`Pet`模型，同时两个模型都支持替换所有`AICharacter`模型。
+可以在`Models`内添加多个模型，以下是酒狐Mod的示例`bundleinfo.json`文件。文件内添加了酒狐的`Character`模型和狐狸的`Pet`模型，同时两个模型都支持替换所有`AICharacter`模型。
 
-```json
+```json [json]
 {
   "BundleName": "jiuhu",
   "BundlePath": "jiuhu",

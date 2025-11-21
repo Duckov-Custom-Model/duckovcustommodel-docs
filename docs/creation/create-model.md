@@ -2,26 +2,7 @@
 
 本文档将指导你如何在 Unity 中导入和配置模型，使其能够与 Duckov Custom Model 模组兼容。
 
-## 创建 Unity 项目
 
-### 1. 启动 Unity Hub
-
-打开 Unity Hub，点击 **New Project**（新项目）。
-
-![image-20251114192750252](/images/image-20251114192750252.png)
-
-### 2. 选择模板
-
-- 选择 **3D** 模板（推荐使用 3D URP）
-- 设置项目名称，如 `DuckovModelPack`
-- 选择保存位置
-- 点击 **Create Project**
-
-![image-20251118045204316](/images/image-20251118045204316.png)
-
-::: tip 项目设置
-建议使用2022.3.62f2版本创建项目以确保最佳兼容性。
-:::
 
 ## 导入模型文件
 

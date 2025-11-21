@@ -40,12 +40,8 @@ Base Layer:
 
 - States: 
 
-  ```
-  ├─ Idle 
-  ├─ Walk 
-  └─ Run
-  ```
-
+  ![image-20251122043825462](/images/image-20251122043825462.png)
+  
   
 
 MeleeAttack Layer:
@@ -55,27 +51,25 @@ MeleeAttack Layer:
 - IK Pass: false
 - States: 
 
-```
-├─ Empty (默认空状态) 
-└─ Attack 
-├─ Attack_1 
-├─ Attack_2 
-└─ Attack_3
-```
+![image-20251122043020475](/images/image-20251122043020475.png)
 
 - Transitions: 
 
-```
-Empty → Attack Conditions: Attack (Trigger) Exit 
-```
+其中，**Attack**为近战攻击动画，**Empty**为一个空动画
 
-- Time: 
+**Any State  —>  Attack**
 
-```
-false Attack → Empty Conditions: (none) Exit Time: true 
-```
+![image-20251122043137422](/images/image-20251122043137422.png)
 
-- Exit Time: 0.9
+**Any State  —>  Empty**
+
+![image-20251122043202345](/images/image-20251122043202345.png)
+
+**Attack —> Empty**	Exit Time: 0.9
+
+![image-20251122043230331](/images/image-20251122043230331.png)
+
+
 
 ### Avatar Mask 设置
 
@@ -175,6 +169,8 @@ Animator Controller 响应
    - 观察动画过渡和混合效果
    - 检查层权重变化
 
+   ![Unity_p1O9hfTSNb](/images/Unity_p1O9hfTSNb.gif)
+   
 2. **使用 Animator Override Controller**
    - 创建 Animator Override Controller
    - 替换动画剪辑进行测试

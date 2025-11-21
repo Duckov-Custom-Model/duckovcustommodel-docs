@@ -13,7 +13,7 @@
 
 示例：
 
-```json
+```json [json]
 {
   "ModelID": "ai_model_id",
   "Name": "AI 模型",
@@ -30,7 +30,7 @@
 
 在 `UsingModel.json` 中，可以为每个 AI 角色单独配置模型：
 
-```json
+```json [json]
 {
   "AICharacterModelIDs": {
     "Cname_Wolf": "wolf_model_id",

@@ -42,6 +42,9 @@ importers:
         specifier: ^7.3.0
         version: 7.3.0
     devDependencies:
+      '@iconify-json/devicon':
+        specifier: ^1.2.50
+        version: 1.2.50
       '@types/node':
         specifier: ^24.10.1
         version: 24.10.1
@@ -51,6 +54,9 @@ importers:
       '@vitejs/plugin-vue':
         specifier: ^6.0.1
         version: 6.0.1(vite@7.2.2(@types/node@24.10.1)(jiti@2.6.1)(terser@5.44.1))(vue@3.5.24)
+      shiki:
+        specifier: ^3.15.0
+        version: 3.15.0
       vitepress:
         specifier: 2.0.0-alpha.13
         version: 2.0.0-alpha.13(@types/node@24.10.1)(jiti@2.6.1)(postcss@8.5.6)(terser@5.44.1)
@@ -731,6 +737,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@iconify-json/devicon@1.2.50':
+    resolution: {integrity: sha512-0K+NysBPW2VTXDa0C/PKtWGPACug+0balv+dmFHTXyN6SQYHljzhXhQgTVZ+Xe4M95qHznNsFb5nhrbE1Bxk4w==}
 
   '@iconify-json/logos@1.2.10':
     resolution: {integrity: sha512-qxaXKJ6fu8jzTMPQdHtNxlfx6tBQ0jXRbHZIYy5Ilh8Lx9US9FsAdzZWUR8MXV8PnWTKGDFO4ZZee9VwerCyMA==}
@@ -3206,6 +3215,10 @@ snapshots:
 
   '@esbuild/win32-x64@0.25.12':
     optional: true
+
+  '@iconify-json/devicon@1.2.50':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify-json/logos@1.2.10':
     dependencies:

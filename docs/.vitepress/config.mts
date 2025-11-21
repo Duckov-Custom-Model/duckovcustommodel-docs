@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { withPwa } from '@vite-pwa/vitepress'
-import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
+import { groupIconMdPlugin, groupIconVitePlugin, localIconLoader } from 'vitepress-plugin-group-icons'
+
 
 export default withPwa(
   defineConfig({
@@ -18,11 +19,24 @@ export default withPwa(
       config(md) {
         md.use(groupIconMdPlugin)
       },
+      shikiSetup: async (shiki) => {
+        await shiki.loadLanguage('git-commit')
+        await shiki.loadLanguage('git-rebase')
+      }
     },
 
     vite: {
       plugins: [
-        groupIconVitePlugin()
+        groupIconVitePlugin({
+          customIcon:{
+            'git': 'vscode-icons:file-type-git',
+            'bash': 'devicon:bash',
+            '文件夹': 'vscode-icons:default-folder',
+            'json': 'vscode-icons:file-type-light-json',
+            'csharp': 'vscode-icons:file-type-csharp2',
+            'csproj': 'vscode-icons:file-type-csproj'
+          }
+        })
       ]
     },
 
@@ -98,7 +112,8 @@ export default withPwa(
           collapsed: false,
           items: [
             { text: '准备工作', link: '/creation/prerequisites' },
-            { text: '创建模型', link: '/creation/create-model', },
+            { text: '创建Unity项目', link: '/creation/create-project' },
+            { text: '创建模型', link: '/creation/create-model' },
             { text: '定位锚点', link: '/creation/locators' },
             { text: '添加动画器', link: '/creation/add-animator' },
             { text: '打包模型', link: '/creation/create-bundle' },

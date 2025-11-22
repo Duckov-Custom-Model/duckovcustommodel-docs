@@ -28,9 +28,31 @@ Unity 和相关工具需要 .NET 运行环境支持。
 
 
 
+### Git
+
+你需要安装Git来导入SDK和进行项目的版本控制。
+
+![image-20251122194812359](/images/image-20251122194812359.png)
+
+下载地址：[Git - Install for Windows](https://git-scm.com/install/windows)
+
+x86 Windows用户选择**[Git for Windows/x64 Setup](https://github.com/git-for-windows/git/releases/download/v2.52.0.windows.1/Git-2.52.0-64-bit.exe)**安装即可
+
+**安装步骤：**
+
+1. 下载Git安装包
+
+2. 点击**Install**
+
+   ![image-20251122214552444](/images/image-20251122214552444.png)
+
+3. 一直点击确认直到安装完成
+
 ### Unity 编辑器
 
 你需要安装 Unity 编辑器来创建和导出 AssetBundle。
+
+![image-20251122194047379](/images/image-20251122194047379.png)
 
 - **推荐版本**：与游戏使用的 Unity 版本一致（2022.3.62f2）
 - **下载地址**：[NoUnityCN](https://www.nounitycn.top/download?v=unityhub://2022.3.62f2/7670c08855a9)，推荐下载安装包单独安装
@@ -42,6 +64,8 @@ Unity 和相关工具需要 .NET 运行环境支持。
 ### Unity Hub
 
 你需要安装Unity Hub来启动Unity编辑器。
+
+![image-20251122194405607](/images/image-20251122194405607.png)
 
 - **推荐版本**：下载最新的就行
 - **下载地址**：
@@ -60,6 +84,8 @@ Unity 和相关工具需要 .NET 运行环境支持。
 ### 文本编辑器
 
 用于编辑 JSON 配置文件：
+
+![image-20251122194535762](/images/image-20251122194535762.png)
 
 - **Visual Studio Code**（推荐）- [下载地址](https://code.visualstudio.com/)
 - **Notepad++**

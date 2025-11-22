@@ -117,7 +117,7 @@ export default withPwa(
             { text: '定位锚点', link: '/creation/locators' },
             { text: '添加动画器', link: '/creation/add-animator' },
             { text: '打包模型', link: '/creation/create-bundle' },
-            { text: '添加自定义音效', link: '/creation/sounds' },
+            { text: '自定义音效和对话', link: '/creation/sounds' },
             { text: 'AI 角色适配', link: '/creation/ai-characters' },
             { text: '打包模型包', link: '/creation/bundle-structure' },
           ]

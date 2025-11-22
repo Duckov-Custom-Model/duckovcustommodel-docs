@@ -4,6 +4,12 @@
 
 ![鸭科夫文档封面](/images/鸭科夫文档封面.png)
 
+
+::: tip 提示
+目前最新版的 Duckov Custom Model 版本号为<VersionCard />
+:::
+
+
 ## 项目概述
 
 **自定义模型管理器** (Duckov Custom Model) 是一个强大的模组，允许玩家为游戏添加和管理自定义模型。无论你是想为角色、宠物或 AI 角色使用自定义模型，这个模组都能提供完整的解决方案。
@@ -33,3 +39,8 @@ framespacing="0"
 allowfullscreen="true"
 style="width: 100%; height: 500px;">
 </iframe>
+
+<script setup>
+import VersionCard from '../.vitepress/components/VersionCard.vue'
+
+</script>

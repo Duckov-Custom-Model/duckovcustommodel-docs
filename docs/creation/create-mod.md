@@ -43,6 +43,12 @@ MyModelMod/                      	 # 模组包根目录
 | `info.ini` | 是 | 模组的信息 |
 | `preview.png` | 是 | 模组预览图，显示在游戏的模组管理器中 |
 
+## 编译Mod DLL
+
+目前有两种编译方式，一种是使用SDK来编译，另一种是手动使用开发工具编译。更推荐使用SDK编译，因为这种方式简单得多。
+
+
+
 ## 使用SDK编译(推荐)
 
 如果安装了**DCM SDK**，可以使用SDK来编译模组DLL。
@@ -318,7 +324,7 @@ namespace DuckovCustomModelRegister
 
 
 
-## 配置 info.ini
+### 配置 info.ini
 
 在模组根目录创建 `info.ini` 文件，配置模组的信息：
 
